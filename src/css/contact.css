@@ -1,0 +1,13 @@
+input,textarea,button {
+    width: 100%;
+    background-color: transparent;
+    border:1px solid rgba(112, 128, 144, 0.439);
+    border-radius: 6px;
+    padding: 10px 16px;
+    outline: none;
+}
+
+form label {
+    display: block;
+    margin-bottom: 4px;
+}

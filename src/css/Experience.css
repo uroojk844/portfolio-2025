@@ -1,0 +1,37 @@
+.card {
+  position: relative;
+  display: grid;
+}
+
+.card:nth-child(odd)::after,
+.card:nth-child(even)::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: aqua;
+  border: 4px solid #030712;
+  outline: 2px solid aqua;
+  left: -33px;
+}
+
+.card-container {
+  border-image: linear-gradient(aqua, dodgerblue) 1 100%;
+}
+
+@media screen and (width>600px) {
+  .card-container {
+    border-right: 1px solid;
+  }
+
+  .card:nth-child(odd)::after {
+    left: calc(100% + 33px);
+  }
+  
+  .card:nth-child(even)::after {
+    left: -32px;
+  }
+}

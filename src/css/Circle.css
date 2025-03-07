@@ -1,0 +1,39 @@
+.orbit {
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  display: grid;
+  border-radius: 50%;
+  animation: circleRotate 20s linear infinite;
+}
+
+.orbit .circle {
+  --radius: 140px;
+  position: absolute;
+  place-self: center;
+  --angle: calc(var(--i) * (360deg / var(--total)));
+  transform: rotate(var(--angle)) translateX(var(--radius));
+}
+
+@media screen and (width<600px) {
+  .orbit .circle {
+    --radius: 120px;
+  }
+}
+
+.orbit .circle svg {
+  transform: rotate(calc(-1 * var(--angle)));
+  animation: rotateText 20s linear infinite reverse;
+  font-size: 32px;
+}
+
+@keyframes circleRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateText {
+  to {
+    transform: rotate(calc(-1 * var(--angle) + 360deg));
+  }
+}
