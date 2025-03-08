@@ -181,7 +181,7 @@ function Skills() {
   ];
 
   return (
-    <section id="skills" className="min-h-dvh sm:p-12">
+    <section id="skills" className="min-h-screen sm:p-12">
       <Heading heading="Tools & Technologies" />
       <Tagline
         className="mb-10"

@@ -16,7 +16,11 @@ const circles = [
 export function OrbitingCirclesDemo() {
   return (
     <div className="group size-40 sm:size-48 my-24 sm:mb-28 sm:mt-32 grid place-items-center relative">
-      <img src={My} className="group-hover:scale-105 transition-transform duration-500 w-full rounded-full" />
+      <img
+        src={My}
+        alt="urooj khan"
+        className="group-hover:scale-105 transition-transform duration-500 w-full rounded-full"
+      />
 
       <section
         className="absolute orbit w-60 sm:w-72"

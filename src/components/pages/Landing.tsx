@@ -29,7 +29,7 @@ function Landing({
   return (
     <section
       id="me"
-      className="grid min-h-dvh content-center justify-items-center"
+      className="grid min-h-screen content-center justify-items-center"
     >
       <nav
         className="hidden py-3 px-6 rounded-full sm:flex gap-8 items-center border border-slate-800"

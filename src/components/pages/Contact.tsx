@@ -39,12 +39,8 @@ ${message}`);
 }
 
 function Contact() {
-
   return (
-    <section
-      id="contact"
-      className="sm:p-12 grid content-center min-h-dvh"
-    >
+    <section id="contact" className="sm:p-12 grid content-center  min-h-screen">
       <Heading heading="Connect with me" />
       <Tagline
         className="mb-16"

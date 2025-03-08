@@ -6,7 +6,7 @@ import { cards } from "@/assets/data/experience";
 
 function Experience() {
   return (
-    <section id="experience" className="sm:p-12 grid content-center min-h-dvh">
+    <section id="experience" className="sm:p-12 grid content-center  min-h-screen">
       <Heading heading="Professional Experience" />
       <Tagline
         tagline="Bringing years of expertise in front-end and full-stack development,
