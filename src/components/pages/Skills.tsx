@@ -195,7 +195,7 @@ function Skills() {
             <div
               key={category.name}
               style={{ "--s": index } as React.CSSProperties}
-              className="slideUpscrollDelay skill-card p-4 bg-slate-900 rounded-md grid grid-cols-2 content-start gap-4"
+              className="slideUpscroll skill-card p-4 bg-slate-900 rounded-md grid grid-cols-2 content-start gap-4"
             >
               <h3 className="col-span-2 flex items-center gap-2 text-xl">
                 <Icon icon={category.icon} fontSize={24} />{" "}

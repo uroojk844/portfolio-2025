@@ -9,7 +9,7 @@ function ProjectCard({ project }: { project: IProjectCard }) {
       key={project.title}
       href={project.url}
       target="_blank"
-      className="slideUpscrollDelay py-5 px-4 project-card rounded-xl grid border border-slate-800 bg-slate-900/90"
+      className="slideUpscroll py-5 px-4 project-card rounded-xl grid border border-slate-800 bg-slate-900/90"
     >
       <div className="group overflow-hidden rounded-md mb-3">
         <img
