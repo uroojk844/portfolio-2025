@@ -1,0 +1,10 @@
+.slideUp{
+    animation: slideUp .5s calc(var(--s)*50ms) ease-in;
+}
+
+@keyframes slideUp{
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+}

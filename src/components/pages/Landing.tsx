@@ -1,4 +1,5 @@
 import "@/css/App.css";
+import "@/css/Landing.css";
 import { Icon } from "@iconify/react";
 import { OrbitingCirclesDemo } from "@/components/Circles";
 
@@ -31,7 +32,7 @@ function Landing({
       className="grid min-h-dvh content-center justify-items-center"
     >
       <nav
-        className={`hidden py-3 px-6 rounded-full sm:flex gap-8 items-center border border-slate-800`}
+        className="hidden py-3 px-6 rounded-full sm:flex gap-8 items-center border border-slate-800"
       >
         {links.map((link, index) => (
           <a
@@ -61,14 +62,23 @@ function Landing({
           ))}
         </div>
       </h1>
-      <p className=" sm:text-xl max-w-2xl text-center mb-8 mt-4">
+      <p
+        style={{ "--s": 0 } as React.CSSProperties}
+        className="slideUp sm:text-xl max-w-2xl text-center mb-8 mt-4"
+      >
         Highly skilled and results-driven Full-Stack Developer with 5+ years of
         hands-on experience crafting robust and scalable web applications.
       </p>
 
-      <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
-        {socials.map((social) => (
-          <a href={social.href} key={social.name} target="_blank">
+      <div className=" flex flex-wrap justify-center items-center gap-8 mb-12">
+        {socials.map((social, index) => (
+          <a
+            style={{ "--s": index + 1 } as React.CSSProperties}
+            className="slideUp"
+            href={social.href}
+            key={social.name}
+            target="_blank"
+          >
             <Icon icon={social.name} fontSize={28} className={social?.class} />
           </a>
         ))}

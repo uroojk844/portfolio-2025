@@ -1,9 +1,7 @@
+import "@/css/Skills.css";
 import { Icon } from "@iconify/react";
 import Heading from "../Heading";
 import Tagline from "../Tagline";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 
 function Skills() {
   const skills = [
@@ -182,26 +180,6 @@ function Skills() {
     },
   ];
 
-  const container1 = useRef<null | HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      gsap.from(".skill-card", {
-        duration: 1,
-        y: 100,
-        opacity: 0,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: ".skill-card",
-          start: "top 700px",
-          end: "bottom 500px",
-          scrub: true,
-        },
-      });
-    },
-    { scope: container1 }
-  );
-
   return (
     <section id="skills" className="min-h-dvh sm:p-12">
       <Heading heading="Tools & Technologies" />
@@ -211,15 +189,13 @@ function Skills() {
         efficient, and visually stunning applications."
       />
 
-      <div
-        ref={container1}
-        className="grid justify-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
-      >
-        {skills.map((category) => {
+      <div className="grid justify-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {skills.map((category, index) => {
           return (
             <div
               key={category.name}
-              className="skill-card p-4 bg-slate-900 rounded-md grid grid-cols-2 content-start gap-4"
+              style={{ "--s": index } as React.CSSProperties}
+              className="slideUpscrollDelay skill-card p-4 bg-slate-900 rounded-md grid grid-cols-2 content-start gap-4"
             >
               <h3 className="col-span-2 flex items-center gap-2 text-xl">
                 <Icon icon={category.icon} fontSize={24} />{" "}

@@ -1,6 +1,14 @@
-function Heading({ heading }: { heading: string }) {
+function Heading({
+  heading,
+  className,
+}: {
+  heading: string;
+  className?: string;
+}) {
   return (
-    <div className="text-4xl font-bold tracking-wide text-center mb-2">
+    <div
+      className={`slideUpscroll text-4xl font-bold tracking-wide text-center mb-4 ${className}`}
+    >
       {heading}
     </div>
   );

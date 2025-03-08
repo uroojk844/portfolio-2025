@@ -1,6 +1,10 @@
 .card {
   position: relative;
   display: grid;
+
+  animation: experienceScroll linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 25%;
 }
 
 .card:nth-child(odd)::after,
@@ -30,8 +34,29 @@
   .card:nth-child(odd)::after {
     left: calc(100% + 33px);
   }
-  
-  .card:nth-child(even)::after {
-    left: -32px;
+
+  .card:nth-child(even) {
+    transform: translateX(calc(100% + 64px));
+    animation: experienceScrollEven linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+
+    &::after {
+      left: -32px;
+    }
+  }
+}
+
+@keyframes experienceScroll {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+}
+
+@keyframes experienceScrollEven {
+  from {
+    opacity: 0;
+    transform: translate(calc(100% + 64px), 200px);
   }
 }

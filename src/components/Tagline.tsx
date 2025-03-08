@@ -5,7 +5,7 @@ function Tagline({
   tagline: string;
   className?: string;
 }) {
-  return <p className={`text-center ${className}`}>{tagline}</p>;
+  return <p className={`slideUpscroll text-center ${className}`}>{tagline}</p>;
 }
 
 export default Tagline;

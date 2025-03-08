@@ -4,30 +4,16 @@ import Skills from "./components/pages/Skills";
 import Contact from "./components/pages/Contact";
 import Experience from "./components/pages/Experience";
 import { Icon } from "@iconify/react";
-import { useEffect, useRef, useState } from "react";
-import { LenisRef, ReactLenis } from "lenis/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useState } from "react";
+import { ReactLenis, useLenis } from "lenis/react";
 
 function App() {
-  const lenisRef = useRef<null | LenisRef>(null);
-  
-  useEffect(() => {
-    function update(time: number) {
-      lenisRef.current?.lenis?.raf(time * 1000);
-    }
-    
-    gsap.ticker.add(update);
-
-    return () => gsap.ticker.remove(update);
-  }, []);
+  useLenis();
 
   const [active, setActive] = useState("Me");
 
   return (
-    <ReactLenis options={{ autoRaf: false }} ref={lenisRef} root>
+    <ReactLenis root>
       <main className="p-6 max-w-[1400px] mx-auto">
         <Landing active={active} setActive={setActive} />
         <Skills />

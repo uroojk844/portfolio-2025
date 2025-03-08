@@ -1,10 +1,8 @@
 import "@/css/contact.css";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { FormEvent, useRef } from "react";
+import { FormEvent } from "react";
 import Heading from "../Heading";
 import Tagline from "../Tagline";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 
 const details = [
   {
@@ -41,29 +39,9 @@ ${message}`);
 }
 
 function Contact() {
-  const container4 = useRef<null | HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      gsap.from(".contact", {
-        duration: 1,
-        opacity: 0,
-        scale: 0.7,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: ".contact",
-          start: "top bottom",
-          end: "center center",
-          scrub: true,
-        },
-      });
-    },
-    { scope: container4 }
-  );
 
   return (
     <section
-      ref={container4}
       id="contact"
       className="sm:p-12 grid content-center min-h-dvh"
     >
@@ -74,7 +52,7 @@ function Contact() {
         connect."
       />
 
-      <div className="grid lg:grid-cols-[1.1fr_.9fr] gap-8 items-center">
+      <div className="zoom grid lg:grid-cols-[1.1fr_.9fr] gap-8 items-center">
         {/* contact */}
         <div className="contact grid gap-4 flex-1 bg-slate-900 px-8 py-10 rounded-xl">
           <div className="flex items-center gap-4 text-2xl font-medium">
@@ -101,7 +79,7 @@ function Contact() {
         </div>
 
         {/* meeting */}
-        <div className="contact grid row-start-2 gap-6 flex-1 bg-slate-900 p-8 py-10 rounded-xl">
+        <div className="zoom contact grid row-start-2 gap-6 flex-1 bg-slate-900 p-8 py-10 rounded-xl">
           <div className="text-2xl font-medium">Schedule a meeting with me</div>
 
           <a
@@ -116,19 +94,13 @@ function Contact() {
         </div>
 
         <form
-          // action="https://api.web3forms.com/submit"
           onSubmit={sendEmail}
           method="POST"
-          className="contact grid row-span-2 gap-4 flex-1 bg-slate-900 px-8 py-8 rounded-xl"
+          className="zoom contact grid row-span-2 gap-4 flex-1 bg-slate-900 px-8 py-8 rounded-xl"
         >
           <div className="flex items-center gap-4 text-2xl font-medium">
             Contact details
           </div>
-          <input
-            type="hidden"
-            name="access_key"
-            value="d7ccd6d0-dae4-4f5b-8f0e-b3221100513f"
-          />
           <div>
             <label htmlFor="fullname">Name</label>
             <input
